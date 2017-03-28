@@ -107,18 +107,18 @@
   <script id="issue" class="partial" type="text/html">
     <li class="{{state}} {{#is_pull_request}}pull-request{{/is_pull_request}}" data-repo="{{repo_name}}" data-username="{{user.login}}" data-assignee="{{assignee.login}}" data-updatedat="{{updated_at}}" data-createdat="{{created_at}}" data-closedat="{{closed_at}}">
       <div class="authorPlaceholder">
-        <a class="author" href="{{user.html_url}}" title="Opened by {{user.login}}"><img src="{{user.avatar_url}}" alt=""></a>
+        <a target="_blank" class="author" href="{{user.html_url}}" title="Opened by {{user.login}}"><img src="{{user.avatar_url}}" alt=""></a>
       </div>
       <div class="assigneePlaceholder">
       {{#assignee}}
         {{>assignee}}
       {{/assignee}}
       </div>
-      <a class="title" href="{{html_url}}">{{title}} {{#comments}}<span class="comments">{{comments}}</span>{{/comments}}</a>
+      <a target="_blank" class="title" href="{{html_url}}">{{title}} {{#comments}}<span class="comments">{{comments}}</span>{{/comments}}</a>
       <br>
-      <a class="repoName" href="{{repo_url}}">{{repo_name}}</a> <a class="issueNumber" href="{{html_url}}">(#{{number}}
+      <a target="_blank" class="repoName" href="{{repo_url}}">{{repo_name}}</a> <a class="issueNumber" target="_blank" href="{{html_url}}">(#{{number}}
         {{#milestone}}
-          / <a class="milestone" href="{{html_url}}">{{title}}</a>
+          / <a target="_blank" class="milestone" href="{{html_url}}">{{title}}</a>
         {{/milestone}})</a>
       <ul class="labels">
       {{#labels}}
@@ -134,7 +134,7 @@
   </script>
 
   <script id="assignee" class="partial" type="text/html">
-    <a class="assignee" href="{{html_url}}"  title="Assigned to {{login}}"><img src="{{avatar_url}}" alt=""></a>
+    <a target="_blank" class="assignee" href="{{html_url}}"  title="Assigned to {{login}}"><img src="{{avatar_url}}" alt=""></a>
   </script>
 
   <script id="repoSelector" type="text/html">
@@ -187,7 +187,7 @@
 
   <script id="status" type="text/html">
     <div class="statusDisplay {{action}}">
-      <a class="" href="{{url}}">
+      <a target="_blank" class="" href="{{url}}">
         <span class="data">{{data}}</span>
         <span class="info">{{info}}</span>
       </a>
